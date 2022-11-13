@@ -9,7 +9,7 @@ def df_to_array(df: DataFrame, keys: list) -> np.ndarray:
         if key not in df.keys():
             raise KeyError(f'{key} can not be found from DataFrame.')
         x.append(df[key].values)
-    return np.asarray(x)
+    return np.asarray(x).T
 
 
 def df_to_XY(df: DataFrame, xkeys: list, ykeys: list) -> tuple:

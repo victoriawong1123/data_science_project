@@ -7,7 +7,7 @@ QUARTERLY_FILE = r'../data/quarterly.csv'
 
 def clean_df(df, drop_empty):
     if drop_empty:
-        df.dropna(inpalce=True)
+        df.dropna(inplace=True)
         return df.reset_index(drop=True)
     else:
         return df
@@ -23,3 +23,4 @@ def read_quarterly(drop_empty=True):
     """Read quarterly data"""
     df = pd.read_csv(QUARTERLY_FILE)
     return clean_df(df, drop_empty)
+
