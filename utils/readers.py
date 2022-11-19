@@ -4,6 +4,8 @@ import pandas as pd
 MA_ACQUIRING_FILE = r'../data/MA_acquiring.csv'
 QUARTERLY_FILE = r'../data/quarterly.csv'
 ACQURIOR_FILE = r'../data/acquiror_uk.csv'
+MONTHLY_FILE = r'../data/monthly.csv'
+GDP_FILE = r'../data/uk_gdp.csv'
 
 
 def clean_df(df, drop_empty):
@@ -32,3 +34,16 @@ def read_acquiror_uk():
     df['Date'] = pd.to_datetime(df['Date'], format='%d.%m.%y')
     return df
 
+
+def read_variable_monthly():
+    """Read variable monthly."""
+    df = pd.read_csv(MONTHLY_FILE)
+    df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d')
+    return df
+
+
+def read_gdp():
+    """Read GDP"""
+    df = pd.read_csv(GDP_FILE)
+    df['Date'] = pd.to_datetime(df['Date'], format='%d.%m.%y')
+    return df
