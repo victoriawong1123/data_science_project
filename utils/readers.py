@@ -6,6 +6,7 @@ QUARTERLY_FILE = r'../data/quarterly.csv'
 ACQURIOR_FILE = r'../data/acquiror_uk.csv'
 MONTHLY_FILE = r'../data/monthly.csv'
 GDP_FILE = r'../data/uk_gdp.csv'
+TARGET_UK_FILE = r'../data/target_uk.csv'
 
 
 def clean_df(df, drop_empty):
@@ -31,6 +32,13 @@ def read_quarterly(drop_empty=True):
 def read_acquiror_uk():
     """Read acquiror"""
     df = pd.read_csv(ACQURIOR_FILE)
+    df['Date'] = pd.to_datetime(df['Date'], format='%d.%m.%y')
+    return df
+
+
+def read_target_uk():
+    """Read target uk"""
+    df = pd.read_csv(TARGET_UK_FILE)
     df['Date'] = pd.to_datetime(df['Date'], format='%d.%m.%y')
     return df
 
