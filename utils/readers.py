@@ -29,8 +29,8 @@ def read_quarterly(drop_empty=True):
     return clean_df(df, drop_empty)
 
 
-def read_acquiror_uk():
-    """Read acquiror"""
+def read_acquirer_uk():
+    """Read acquirer"""
     df = pd.read_csv(ACQURIOR_FILE)
     df['Date'] = pd.to_datetime(df['Date'], format='%d.%m.%y')
     return df
