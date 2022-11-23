@@ -7,6 +7,7 @@ ACQURIOR_FILE = r'../data/acquiror_uk.csv'
 MONTHLY_FILE = r'../data/monthly.csv'
 GDP_FILE = r'../data/uk_gdp.csv'
 TARGET_UK_FILE = r'../data/target_uk.csv'
+INTEREST_RATE_FILE = r'//Users/victoriawong/Desktop/MsF_S1/Datascience/data_science_project/data/Interest_Rate.csv'
 
 
 def clean_df(df, drop_empty):
@@ -55,3 +56,11 @@ def read_gdp():
     df = pd.read_csv(GDP_FILE)
     df['Date'] = pd.to_datetime(df['Date'], format='%d.%m.%y')
     return df
+
+
+def read_interest_rate():
+    """Read interest rate"""
+    df = pd.read_csv(INTEREST_RATE_FILE)
+    df['Date'] = pd.to_datetime(df['Date'], format='%Y-%m-%d')
+    return df
+
